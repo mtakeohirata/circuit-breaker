@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "demo"
+resilience4j:
+  circuitbreaker:
+    instances:
+      externalService:
+        failure-rate-threshold: 1
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 5
+        sliding-window-size: 100
